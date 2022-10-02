@@ -1,0 +1,38 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class Main {
+    static String word = "javalove";
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+
+        System.out.println("угадай слово");
+        int lengthWord = word.length();
+        String maskWord = "-".repeat(lengthWord);
+        System.out.println(maskWord);
+
+        do {
+            System.out.println("Введите букву");
+            char c = input.next().charAt(0);
+            if (word.indexOf(c)>=0) {
+                System.out.println("Удача");
+                for (char elem : word.toCharArray()) {
+                    if (elem == c) {
+                        maskWord = replaceMaskLetter (c, maskWord);
+                    }
+                }
+                System.out.println(maskWord);
+            } else {
+                System.out.println("Промах, попробуй еще раз");
+                System.out.println(maskWord);
+            }
+        } while (maskWord.contains("-"));
+        System.out.println("Поздравляем, ты выиграл!");
+
+    }
+    public static String replaceMaskLetter (char c, String maskWord) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for
+    }
+
+
+}
