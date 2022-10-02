@@ -31,8 +31,18 @@ public class Main {
     }
     public static String replaceMaskLetter (char c, String maskWord) {
         StringBuilder stringBuilder = new StringBuilder();
-        for
-    }
+        for (int i = 0; i<word.length(); i++) {
+            if (word.charAt(i)==c) {
+                stringBuilder.append(c);
+            } else if (maskWord.charAt(i) != '-') {
+                stringBuilder.append (maskWord.charAt(i));
 
+            }else {
+                stringBuilder.append("-");
+
+            }
+        }
+        return stringBuilder.toString();
+    }
 
 }
